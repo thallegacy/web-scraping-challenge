@@ -22,7 +22,7 @@
   <body>
     <div class="container">
   
-      <div class="jumbotron text-center border-bottom">
+      <div class="jumbotron text-center ">
         <h1 class="font-weight-bold">Mission to Mars</h1>
         <p><a class="btn btn-primary btn-lg" href="../scrape" role="button">Scrape New Data</a></p>
       </div>
@@ -39,8 +39,23 @@
           <p>{{mars_info.news_p}}</p>
         </div>
       </div>
+      
+      <div class="row">
+        <div class="col-md-8">
+          <h2 class=""><u>Featured Mars Image</u></h2> 
+          </br>
+          <img src="{{mars_info.featured_image_url}}" alt="Features Mars Image">
+        </div>
+        <div class="col-md-4">
+          </br>
+          <div>
+            <h5>Mars Facts</h5>
+              {{ mars_info.mars_facts | safe }}
+          </div>
+        </div>
+      </div>
     
-      </div> 
+    </div> 
   
     
     
