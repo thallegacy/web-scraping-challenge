@@ -58,7 +58,7 @@ def scrape():
     facts_df.set_index('Description',inplace=True)
 
     # Convert dataframe to html
-    facts_html = facts_df.to_html()
+    facts_html = facts_df.to_html(classes="table table-bordered table-striped table-hover")
 
     # New Url that will be used to scrape information
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -108,5 +108,8 @@ def scrape():
         "featured_image_url": featured_image_url,
         "mars_facts": facts_html,
         "mars_hemispheres": hemisphere_image_urls
-    }    
+    }
+    # Close the browser after scraping
+    browser.quit()    
+    
     return full_mars_dict
